@@ -1,12 +1,14 @@
 package ictgradschool.web.jdbc.ex03;
 
 import ictgradschool.Keyboard;
+import ictgradschool.web.jdbc.ex01.Article;
 import ictgradschool.web.util.DBConnectionUtils;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Locale;
 
 public class Ex03Main {
 
@@ -107,20 +109,26 @@ public class Ex03Main {
         List<RoleInfo> informationByMovieTitle = FilmsDAO.getRoleInfoByFilm(search, conn);
 
 
-        if (informationByMovieTitle.size() == 0) {
-            System.out.println("no matching actor");
+//        if (informationByMovieTitle.size() == 0) {
+//            System.out.println("no matching actor");
+//        } else {
+//            for (RoleInfo r : informationByMovieTitle)
+//                System.out.println(r.toString());
+
+        if (informationByMovieTitle == null) {
+            System.out.println("no matching article");
         } else {
-            for (RoleInfo r : informationByMovieTitle)
-                System.out.println(r.toString());
 
+            for (RoleInfo roleInfo : informationByMovieTitle)
 
+                System.out.println(roleInfo);
+        }
 
 
 
 
 
         }
-    }
 
 
     public static void main(String[] args) throws IOException, SQLException {
