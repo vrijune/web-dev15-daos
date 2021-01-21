@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/scripts/ex01-init.sql" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/scripts/ex03-init.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/scripts/ex01-init.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/scripts/ex03-init.sql" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/scripts/examples-init.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/ictgradschool/web/jdbc/ex03/FilmsDAO.java" dialect="MariaDB" />
   </component>
 </project>

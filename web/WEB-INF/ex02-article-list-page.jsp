@@ -21,8 +21,25 @@
         <tbody>
 
         <%-- TODO Exercise two step 2: Display articles list --%>
+        <c:forEach var="article"  items="${articles}">
+            <tr>
+                <td> <a href="./ex02-article-content?id=${article.artid}">${article.artid}</a></td>
+                <td> <a href="./ex02-article-content?id=${article.artid}">${article.title}</a></td>
+                <td> <a href="./ex02-article-content?id=${article.artid}">${article.text}</a></td>
+            </tr>
+        </c:forEach>
+
+
+
 
         <%-- TODO Exercise two step 3: Add hyperlinks to ./ex02-article-content --%>
+
+
+
+
+
+
+
 
         </tbody>
     </table>

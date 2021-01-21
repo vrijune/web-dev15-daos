@@ -13,11 +13,20 @@
 
     <%-- TODO Exercise two step 5: Display the article --%>
 
-    <h1>Article title goes here</h1>
+    <c:forEach var="articleContent" items="${articlesContent}">
 
-    <p>Article body goes here</p>
+
+        <h1>Article title goes here</h1>
+        <h2>${articleContent.title}</h2>
+        <p>Article body goes here</p>
+        <td>${articleContent.text}</td>
+
+    </c:forEach>
 
     <%-- TODO Exercise two-and-a-half: Add button or hyperlink to delete article --%>
+    <FORM name="form1 " method="post">
+    <input type="button" value="click" id="delete">
+    </FORM>
 
 </div>
 

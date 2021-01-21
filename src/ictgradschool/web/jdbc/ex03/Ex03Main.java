@@ -6,6 +6,7 @@ import ictgradschool.web.util.DBConnectionUtils;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Ex03Main {
 
@@ -25,7 +26,12 @@ public class Ex03Main {
                         informationByActor(conn);
                         break;
 
-                        // TODO Exercise three step 4: Some code here
+
+                    // TODO Exercise three step 4: Some code here
+                    case INFO_BY_FILM:
+                        informationByMovieTitle(conn);
+                        break;
+
 
                     case EXIT:
                         done = true;
@@ -61,21 +67,60 @@ public class Ex03Main {
 
     }
 
-    private void informationByActor(Connection conn) throws SQLException {
+    private void informationByActor(Connection conn) throws SQLException, IOException {
+
 
         System.out.print("Please enter the actor's name (press ENTER to return to main menu): > ");
-        String search = Keyboard.readInput();
-
-        if (search.isEmpty()) {
-            return;
-        }
 
         // TODO Exercise three step 2: Complete this
 
+        String search = Keyboard.readInput();
+        if (search.isEmpty()) {
+            return;
 
+        }
+        List<RoleInfo> informationByActor = FilmsDAO.getRoleInfoByActor(search, conn);
+
+
+        if (informationByActor.size() == 0) {
+            System.out.println("no matching actor");
+        } else {
+            for (RoleInfo r : informationByActor)
+                System.out.println(r.toString());
+        }
     }
 
-    // TODO Exercise three step 4: Some code here
+
+// TODO Exercise three step 4: Some code here
+
+    private void informationByMovieTitle(Connection conn) throws SQLException, IOException {
+
+
+        System.out.print("Please enter the movie title (press ENTER to return to main menu): > ");
+
+
+        String search = Keyboard.readInput();
+        if (search.isEmpty()) {
+            return;
+
+        }
+        List<RoleInfo> informationByMovieTitle = FilmsDAO.getRoleInfoByFilm(search, conn);
+
+
+        if (informationByMovieTitle.size() == 0) {
+            System.out.println("no matching actor");
+        } else {
+            for (RoleInfo r : informationByMovieTitle)
+                System.out.println(r.toString());
+
+
+
+
+
+
+
+        }
+    }
 
 
     public static void main(String[] args) throws IOException, SQLException {

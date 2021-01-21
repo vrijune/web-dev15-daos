@@ -19,7 +19,8 @@ CREATE TABLE unidb_students (
   country char(2),
   mentor int(11) NOT NULL,
   PRIMARY KEY (id),
-  CHECK (id > 1000 AND id <= 10000),
+#
+
   CHECK (country LIKE '__')
 );
 
